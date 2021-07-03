@@ -1,0 +1,29 @@
+{
+  "name": "festival-musica",
+  "version": "1.0.0",
+  "description": "Aprendiendo GULP y SASS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/he1ox/FestivalMusica_Proyecto4.git"
+  },
+  "keywords": [
+    "SASS",
+    "GULP",
+    "Web",
+    "Design"
+  ],
+  "author": "Jorge Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/he1ox/FestivalMusica_Proyecto4/issues"
+  },
+  "homepage": "https://github.com/he1ox/FestivalMusica_Proyecto4#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0"
+  }
+}
