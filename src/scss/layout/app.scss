@@ -1,4 +1,6 @@
-$fuentePrincipal : "Helvetica";
+@import '../base/normalize';
+@import '../base/variables';
+@import '../base/globales';
 
 body {
     font-family: $fuentePrincipal;
