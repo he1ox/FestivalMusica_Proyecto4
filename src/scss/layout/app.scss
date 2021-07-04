@@ -1,6 +1,15 @@
 @import '../base/normalize';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 @import '../base/variables';
+@import '../base/mixins';
 @import '../base/globales';
+//layout
+@import '../layout/header.scss';
 
+/* El orden en el que agregamos los archivos scss al 
+app.scss es muy importante.
 
+Definir primero las variables, nos permite usarlas en los mixins.
+Definir despues los mixins, nos permite usarlos dentro de los globales
+
+*/

@@ -371,6 +371,10 @@ img {
   max-width: 100%;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 h1 {
   font-size: 4rem;
 }
@@ -382,3 +386,57 @@ h2 {
 h3 {
   font-size: 3rem;
 }
+
+.header {
+  background-color: #4CB8B3;
+}
+.header .contenido-header {
+  padding: 2.5rem 0;
+}
+@media (min-width: 768px) {
+  .header .contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header h1 {
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .header h1 {
+    margin-bottom: 0;
+  }
+}
+
+.navegacion-principal {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.navegacion-principal a {
+  color: #FFF;
+  font-size: 2rem;
+  /*Mantiene al anidamiento de SASS 
+  & (Amperson) ignora el primer selector en app.css
+
+  De no ser usado, repite el mismo selector sobre el cual
+  se  busca aplicar.
+
+  Quedando de la siguiente manera 
+  .navegacion-principal a a:hover
+  */
+}
+.navegacion-principal a:hover {
+  color: #FEF46D;
+}
+
+/* El orden en el que agregamos los archivos scss al 
+app.scss es muy importante.
+
+Definir primero las variables, nos permite usarlas en los mixins.
+Definir despues los mixins, nos permite usarlos dentro de los globales
+
+*/

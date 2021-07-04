@@ -1,0 +1,58 @@
+@use "sass:math";
+
+.header {
+    background-color: $verde;
+
+    .contenido-header {
+        padding: math.div($separacion, 2) 0;
+        
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    h1 {
+        color: $blanco;
+        text-align: center;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+        margin-bottom: 1rem;
+    }
+}
+
+
+.navegacion-principal {
+
+    display: flex;
+    gap: 2rem;
+    
+    justify-content: center;
+
+    @include telefono {
+    }
+
+    a {
+        color: $blanco;
+        font-size: 2rem;
+
+        /*Mantiene al anidamiento de SASS 
+        & (Amperson) ignora el primer selector en app.css
+
+        De no ser usado, repite el mismo selector sobre el cual
+        se  busca aplicar.
+
+        Quedando de la siguiente manera 
+        .navegacion-principal a a:hover
+        */
+
+        &:hover {
+            color: $amarillo;
+        }
+    }
+
+}
+
