@@ -4,7 +4,8 @@
 @import '../base/mixins';
 @import '../base/globales';
 //layout
-@import '../layout/header.scss';
+@import '../layout/header';
+@import '../layout/video'
 
 /* El orden en el que agregamos los archivos scss al 
 app.scss es muy importante.
