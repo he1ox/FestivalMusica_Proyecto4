@@ -456,3 +456,22 @@ h3 {
   display: block;
   width: 100%;
 }
+.video .contenido-video {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.video .contenido-video h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #FFF;
+  font-size: 7rem;
+}
+.video .contenido-video h2 span {
+  background-color: #F53756;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}

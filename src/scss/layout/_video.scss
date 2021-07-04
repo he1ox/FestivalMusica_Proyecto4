@@ -13,13 +13,32 @@
         background: -webkit-linear-gradient(-45deg,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.65) 50%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(135deg,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.65) 50%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc891c1e', endColorstr='#80ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-        
     }
 
     video {
         display: block;
         width: 100%;
+    }
+
+    .contenido-video {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        
+        h2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            color: $blanco;
+            font-size: 7rem;
+            span {
+                background-color: $rosa;
+                font-size: 2rem;
+                padding: 1rem 2rem;
+            }
+        }
     }
 
 }
