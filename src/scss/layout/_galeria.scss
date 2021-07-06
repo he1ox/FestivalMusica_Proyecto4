@@ -1,0 +1,25 @@
+@use 'sass:math';
+
+.galeria {
+    padding: $separacion;
+
+    h3 {
+        text-align: center;
+    }
+}
+
+.galeria-imagenes {
+    padding: 0;
+    list-style: none;
+    margin-top: $separacion;
+    @include grid(2,math.div($separacion,2));
+
+    @include tablet {
+        @include grid(4, math.div($separacion,2));
+    }
+
+    @include desktop {
+        @include grid(6, math.div($separacion,2));
+    }
+
+}

@@ -4,10 +4,12 @@ const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const notify = require('gulp-notify');
 const webp = require('gulp-webp');
+const concat = require('gulp-concat');
 
 const paths = {
     imagenes: 'src/img/**/*',
-    scss : {build: './build/css'}
+    scss : {build: './build/css'},
+    js: 'src/js/**/*.js'
 }
 
 //funcion que compila SASS
@@ -31,6 +33,13 @@ function minificarCSS(){
         .pipe(notify({message: 'CSS Minificado/Comprimido'}))
 }
 
+function javascript(){
+    return src(paths.js)
+        .pipe(concat('bundle.js'))
+        .pipe(dest('./build/js'))
+        .pipe(notify({message: 'Js Compilado.'}))
+}
+
 //Reduce significativamente el peso de las imagenes, guarda el archivo
 //Comprimido el buil/img
 function imagenes(){
@@ -51,7 +60,8 @@ function versionWebp(){
 function watchArchivos() {
     //Escucha por cambios que puedan suceder en el archivo
     //Ejecuta la tarea de css si detecta cambios
-    watch('src/**/*.scss', css) // * => carpeta actual con esa extensión.
+    watch('src/**/*.scss', css); // * => carpeta actual con esa extensión.
+    watch('src/**/*.js', javascript);
 }
 
 
@@ -59,5 +69,6 @@ exports.css = css;
 exports.minificarCSS = minificarCSS;
 exports.imagenes = imagenes;
 exports.watchArchivos = watchArchivos;
+exports.javascript = javascript;
 
-exports.default = series(css, imagenes, versionWebp, watchArchivos);
+exports.default = series(css, javascript, imagenes, versionWebp, watchArchivos);
