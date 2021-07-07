@@ -657,6 +657,40 @@ h3 {
   margin-bottom: 2rem;
 }
 
+.pase {
+  width: 100%;
+  border-spacing: 0;
+}
+.pase thead {
+  background-color: #F53756;
+}
+.pase thead th {
+  padding: 1.25rem;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2rem;
+}
+.pase tbody {
+  background-color: #FFF;
+}
+.pase tbody td {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.pase tbody tr:last-of-type td {
+  border: none;
+}
+.pase tfoot {
+  background-color: #752F97;
+}
+.pase tfoot td {
+  text-align: center;
+  font-size: 3rem;
+  color: #FFF;
+  padding: 1.25rem;
+}
+
 /* El orden en el que agregamos los archivos scss al 
 app.scss es muy importante.
 
