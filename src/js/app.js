@@ -1,7 +1,30 @@
 document.addEventListener('DOMContentLoaded', () =>{
+    /*DOMContentLoaded, es ejecutado cuando todo el HTML
+    ha sido completamente cargado, sin esperar hojas de estilo, ni imagenes.
+    */
     scrollNav();
+
+    navegacionFija();
 })
 
+
+function navegacionFija() {
+    //Intersection Observer
+    const barra = document.querySelector('.header');
+    //Registrar Intersection Observer
+    const observer = new IntersectionObserver(function(entries) {
+        if(entries[0].isIntersecting){
+            barra.classList.remove('fijo');
+        }
+        else {
+            barra.classList.add('fijo');
+        }
+    });
+
+
+    //Elemento a observar
+    observer.observe(document.querySelector('.sobre-festival'));
+}
 
 
 function scrollNav() {
