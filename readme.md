@@ -1,4 +1,4 @@
-<h1 align="center">Café Blog Project #3</h1>
+<h1 align="center">Festival Music Project #4</h1>
 <h3>Web Design & Development Course </h3>
 
 <ul>
