@@ -12,12 +12,20 @@ const paths = {
     js: 'src/js/**/*.js'
 }
 
+
+//Utilidades CSS
+const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const sourcemaps = require('gulp-sourcemaps');
+
 //funcion que compila SASS
 function css(){
     return src("src/scss/layout/app.scss")
-        .pipe(sass({
-            outputStyle: 'expanded'
-        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(postcss([autoprefixer(),cssnano()]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest(paths.scss.build))
         .pipe(notify({message: 'CSS Compilado.'}))
 }
