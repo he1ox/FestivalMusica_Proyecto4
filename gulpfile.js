@@ -19,6 +19,10 @@ const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 
+//Utilidades JS
+const terser = require('gulp-terser-js');
+const rename = require('gulp-rename');
+
 //funcion que compila SASS
 function css(){
     return src("src/scss/layout/app.scss")
@@ -43,7 +47,11 @@ function minificarCSS(){
 
 function javascript(){
     return src(paths.js)
+        .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
+        .pipe( terser() )
+        .pipe(sourcemaps.write('.'))
+        .pipe(rename({suffix:'.min'}))
         .pipe(dest('./build/js'))
         .pipe(notify({message: 'Js Compilado.'}))
 }
@@ -52,6 +60,7 @@ function javascript(){
 //Comprimido el buil/img
 function imagenes(){
     return src(paths.imagenes)
+        
         .pipe(imagemin())
         .pipe(dest('./build/img'))
         .pipe(notify({message: 'Imagen Minificada'}));
