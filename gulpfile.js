@@ -72,3 +72,4 @@ exports.watchArchivos = watchArchivos;
 exports.javascript = javascript;
 
 exports.default = series(css, javascript, imagenes, versionWebp, watchArchivos);
+
